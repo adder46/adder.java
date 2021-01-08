@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="HalfFull" verbose="1" >
+    <test name="Case (0, 0)">
+        <parameter name="a" value="0"/>
+        <parameter name="b" value="0"/>
+        <parameter name="expectedSum" value="0"/>
+        <parameter name="expectedCarryOut" value="0"/>
+        <classes>
+            <class name="com.github.adder46.libadder.FullAdderTest"/>
+            <class name="com.github.adder46.libadder.HalfAdderTest"/>
+        </classes>
+    </test>
+    <test name="Case (0, 1)">
+    <parameter name="a" value="0"/>
+    <parameter name="b" value="1"/>
+    <parameter name="expectedSum" value="1"/>
+    <parameter name="expectedCarryOut" value="0"/>
+    <classes>
+        <class name="com.github.adder46.libadder.FullAdderTest"/>
+        <class name="com.github.adder46.libadder.HalfAdderTest"/>
+    </classes>
+    </test>
+    <test name="Case (1, 0)">
+    <parameter name="a" value="1"/>
+    <parameter name="b" value="0"/>
+    <parameter name="expectedSum" value="1"/>
+    <parameter name="expectedCarryOut" value="0"/>
+    <classes>
+        <class name="com.github.adder46.libadder.FullAdderTest"/>
+        <class name="com.github.adder46.libadder.HalfAdderTest"/>
+    </classes>
+    </test>
+    <test name="Case (1, 1)">
+    <parameter name="a" value="1"/>
+    <parameter name="b" value="1"/>
+    <parameter name="expectedSum" value="0"/>
+    <parameter name="expectedCarryOut" value="1"/>
+    <classes>
+        <class name="com.github.adder46.libadder.FullAdderTest"/>
+        <class name="com.github.adder46.libadder.HalfAdderTest"/>
+    </classes>
+    </test>
+</suite>

@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="HalfFull" verbose="1" >
+    <test name="Case (4, 4)">
+        <parameter name="a" value="4"/>
+        <parameter name="b" value="4"/>
+        <parameter name="expectedResult" value="8"/>
+        <classes>
+            <class name="com.github.adder46.libadder.RippleCarryAdderTest"/>
+        </classes>
+    </test>
+    <test name="Case (23, 37)">
+    <parameter name="a" value="23"/>
+    <parameter name="b" value="37"/>
+    <parameter name="expectedResult" value="60"/>
+    <classes>
+        <class name="com.github.adder46.libadder.RippleCarryAdderTest"/>
+    </classes>
+    </test>
+    <test name="Case (127, 128)">
+    <parameter name="a" value="127"/>
+    <parameter name="b" value="128"/>
+    <parameter name="expectedResult" value="255"/>
+    <classes>
+        <class name="com.github.adder46.libadder.RippleCarryAdderTest"/>
+    </classes>
+    </test>
+</suite>
