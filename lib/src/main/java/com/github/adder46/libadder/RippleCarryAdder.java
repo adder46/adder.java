@@ -26,7 +26,7 @@ public class RippleCarryAdder {
         return getResult();
     }
 
-    public int getResult() {
+    private int getResult() {
         int result = 0;
         for (int i = adders.length - 1; i >= 0; i--) {
             result <<= 1;
