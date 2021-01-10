@@ -8,7 +8,9 @@
 
 plugins {
     // Apply the java-library plugin for API and implementation separation.
+    java
     `java-library`
+    jacoco
 }
 
 repositories {
@@ -29,5 +31,23 @@ dependencies {
 
 tasks.test {
     // Use TestNG for unit tests.
-    useTestNG()
+    testLogging {
+        events("passed", "skipped", "failed", "standardOut", "standardError")
+    }
+    useTestNG(closureOf<TestNGOptions> {
+        suites("src/test/resources/testng.xml")
+    })
+    finalizedBy(tasks.jacocoTestReport)
+    doLast {
+        println("View code coverage at:")
+        println("file://$buildDir/reports/jacoco/test/html/index.html")
+    }
+}
+
+tasks.jacocoTestReport {
+    reports {
+        html.isEnabled = false
+        xml.isEnabled = true
+    }
+    dependsOn(tasks.test) // tests are required to run before generating the report
 }
